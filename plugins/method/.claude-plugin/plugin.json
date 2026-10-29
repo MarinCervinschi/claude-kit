@@ -1,0 +1,12 @@
+{
+  "name": "method",
+  "version": "1.0.0",
+  "description": "How a project is decided, written and reviewed: spec interview, plain writing, code comments, design principles, feature review, safe changes, pre-PR checklist.",
+  "author": {
+    "name": "Marin Cervinschi"
+  },
+  "homepage": "https://github.com/MarinCervinschi/claude-kit",
+  "repository": "https://github.com/MarinCervinschi/claude-kit",
+  "license": "MIT",
+  "keywords": ["method", "spec", "writing", "review", "workflow"]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "stack-dotnet-next",
+  "version": "0.1.0",
+  "description": "The dotnet-next base stack: an ASP.NET Core API with OpenAPI, a Next.js front on a generated client, workers for long-running work.",
+  "author": {
+    "name": "Marin Cervinschi"
+  },
+  "homepage": "https://github.com/MarinCervinschi/claude-kit",
+  "repository": "https://github.com/MarinCervinschi/claude-kit",
+  "license": "MIT",
+  "keywords": ["stack", "dotnet", "aspnetcore", "nextjs", "openapi"]
+}

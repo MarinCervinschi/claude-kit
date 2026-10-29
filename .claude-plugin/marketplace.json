@@ -1,0 +1,54 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-kit",
+  "owner": {
+    "name": "Marin Cervinschi"
+  },
+  "metadata": {
+    "description": "Marin Cervinschi's way of building software with Claude Code: a method plugin for every repo, and one plugin per named stack."
+  },
+  "plugins": [
+    {
+      "name": "method",
+      "source": "./plugins/method",
+      "description": "How a project is decided, written and reviewed: a spec interview, plain writing, code comments, design principles, a feature review, safe changes and a pre-PR checklist. Fits any repo.",
+      "license": "MIT",
+      "keywords": ["method", "spec", "writing", "review", "workflow"]
+    },
+    {
+      "name": "stack-web-ts",
+      "source": "./plugins/stack-web-ts",
+      "description": "Full stack, v3: one TypeScript app with server-rendered React pages, server functions, Drizzle on Postgres and Better Auth in the same process. Overview, scaffold and pattern skills.",
+      "license": "MIT",
+      "keywords": ["stack", "typescript", "tanstack-start", "drizzle", "postgres", "better-auth"]
+    },
+    {
+      "name": "stack-rust-py-lab",
+      "source": "./plugins/stack-rust-py-lab",
+      "description": "Base stack: a dependency-free Rust core driven from Python through PyO3 and compiled to WebAssembly for the browser, for reproducible experiments.",
+      "license": "MIT",
+      "keywords": ["stack", "rust", "python", "pyo3", "wasm"]
+    },
+    {
+      "name": "stack-dotnet-next",
+      "source": "./plugins/stack-dotnet-next",
+      "description": "Base stack: an ASP.NET Core API that publishes OpenAPI, a separate Next.js front on a generated client, long-running work in workers.",
+      "license": "MIT",
+      "keywords": ["stack", "dotnet", "aspnetcore", "nextjs", "openapi"]
+    },
+    {
+      "name": "stack-dotnet-spa",
+      "source": "./plugins/stack-dotnet-spa",
+      "description": "Base stack: one ASP.NET Core process that serves the API and a Vite + React single-page app from the same origin.",
+      "license": "MIT",
+      "keywords": ["stack", "dotnet", "aspnetcore", "react", "vite", "spa"]
+    },
+    {
+      "name": "stack-dotnet-blazor",
+      "source": "./plugins/stack-dotnet-blazor",
+      "description": "Base stack: Blazor Server, where UI components run on the server over a live SignalR connection and call services in-process.",
+      "license": "MIT",
+      "keywords": ["stack", "dotnet", "blazor", "signalr", "efcore"]
+    }
+  ]
+}

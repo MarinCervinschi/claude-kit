@@ -1,0 +1,12 @@
+{
+  "name": "stack-web-ts",
+  "version": "3.0.0",
+  "description": "The web-ts stack, v3: TanStack Start, Drizzle on Postgres, Better Auth, files in an S3-compatible store. Overview, scaffold, and the Drizzle, server-function and data-table patterns.",
+  "author": {
+    "name": "Marin Cervinschi"
+  },
+  "homepage": "https://github.com/MarinCervinschi/claude-kit",
+  "repository": "https://github.com/MarinCervinschi/claude-kit",
+  "license": "MIT",
+  "keywords": ["stack", "typescript", "tanstack-start", "drizzle", "postgres", "better-auth"]
+}

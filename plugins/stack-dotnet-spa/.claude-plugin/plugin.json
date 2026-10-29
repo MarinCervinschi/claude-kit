@@ -1,0 +1,12 @@
+{
+  "name": "stack-dotnet-spa",
+  "version": "0.1.0",
+  "description": "The dotnet-spa base stack: one ASP.NET Core process serving the API and a Vite + React SPA from the same origin.",
+  "author": {
+    "name": "Marin Cervinschi"
+  },
+  "homepage": "https://github.com/MarinCervinschi/claude-kit",
+  "repository": "https://github.com/MarinCervinschi/claude-kit",
+  "license": "MIT",
+  "keywords": ["stack", "dotnet", "aspnetcore", "react", "vite", "spa"]
+}

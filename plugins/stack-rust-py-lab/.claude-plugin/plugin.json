@@ -1,0 +1,12 @@
+{
+  "name": "stack-rust-py-lab",
+  "version": "0.1.0",
+  "description": "The rust-py-lab base stack: a dependency-free Rust core, a PyO3 binding for Python experiments, a WebAssembly build for the browser.",
+  "author": {
+    "name": "Marin Cervinschi"
+  },
+  "homepage": "https://github.com/MarinCervinschi/claude-kit",
+  "repository": "https://github.com/MarinCervinschi/claude-kit",
+  "license": "MIT",
+  "keywords": ["stack", "rust", "python", "pyo3", "wasm"]
+}

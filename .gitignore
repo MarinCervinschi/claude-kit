@@ -1,0 +1,3 @@
+# The private names check-public.sh looks for: publishing the list would publish the names.
+scripts/denylist.local
+.DS_Store

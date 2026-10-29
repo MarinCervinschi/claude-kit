@@ -1,0 +1,11 @@
+# Names that must never appear in this public repo, one extended regex per line, matched case-insensitively.
+# Copy to scripts/denylist.local (gitignored) and fill it. Keep the real list out of git: publishing it would
+# publish the names.
+#
+# Personal hosts and domains
+\bmy-server\b
+example-private\.site
+#
+# Employer products, clients and colleagues under NDA
+\bInternalProduct\b
+\bClientName\b

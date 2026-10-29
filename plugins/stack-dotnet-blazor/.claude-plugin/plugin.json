@@ -1,0 +1,12 @@
+{
+  "name": "stack-dotnet-blazor",
+  "version": "0.1.0",
+  "description": "The dotnet-blazor base stack: Blazor Server components over SignalR, calling services and EF Core in-process.",
+  "author": {
+    "name": "Marin Cervinschi"
+  },
+  "homepage": "https://github.com/MarinCervinschi/claude-kit",
+  "repository": "https://github.com/MarinCervinschi/claude-kit",
+  "license": "MIT",
+  "keywords": ["stack", "dotnet", "blazor", "signalr", "efcore"]
+}
