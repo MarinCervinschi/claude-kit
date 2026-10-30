@@ -8,7 +8,7 @@ stack it uses, and every repo then reads the same version of each skill instead 
 
 | Plugin | Level | Skills |
 |---|---|---|
-| `method` | | `spec-interview`, `plain-writing`, `code-comments`, `design-principles`, `feature-review`, `safe-changes`, `pre-pr-checklist` |
+| `method` | | `spec-interview`, `task-tracking`, `plain-writing`, `code-comments`, `design-principles`, `feature-review`, `safe-changes`, `pre-pr-checklist` |
 | `stack-web-ts` (v3) | full | `overview`, `scaffold`, `drizzle-schema`, `server-functions`, `data-tables` |
 | `stack-rust-py-lab` | base | `overview` |
 | `stack-dotnet-next` | base | `overview` |
