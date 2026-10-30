@@ -27,7 +27,18 @@ Choosing the shape:
 - **A big epic gets real sub-issues**, so the tracker shows progress by itself. **A small one**, with a few items that ship together, keeps a checklist in its body.
 - **Say what an estimate means** when siblings are estimated: effort, or the order to do them in.
 - **File a roadmap in one go** into the backlog, then pull items into the current cycle when work starts.
-- **A spec milestone can become an epic**, with the milestone's "done means" as the epic's done criteria and its steps as children.
+- **A spec milestone can become an epic**: see the next section.
+
+## From a spec milestone to tracked work
+
+A project that starts from `method:spec-interview` has milestones in `SPEC.md`, each with a "done means" line. When a milestone starts and the project tracks work in issues:
+
+1. Open one epic for the milestone (a project milestone on Linear). Its title is the milestone's name, its first paragraph says what ships, and its done criteria are the "done means" line, as checkboxes.
+2. Turn each step of the milestone into a child: sub-issues when they ship separately, a checklist in the epic when they ship together (the epic-form default above).
+3. Link both ways: the epic links to `SPEC.md`, and the milestone in `SPEC.md` gets the epic's number next to it.
+4. When the milestone is done, close the epic with a summary comment and mark the milestone done in `SPEC.md` with the date.
+
+When not to: a short milestone in a solo repo, or a repo that tracks work only in `SPEC.md` and a status line in `CLAUDE.md`, can stay that way. Ask before opening issues in a repo that has none.
 
 ## Writing an issue
 

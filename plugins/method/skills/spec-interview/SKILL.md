@@ -43,7 +43,7 @@ decisions table.
    "no backup" are valid answers when they are written down.
 7. **Auth, privacy and abuse**: accounts or not, roles, rate limits, what an anonymous visitor can do.
 8. **How success is measured**: the number that says it works, and how it is collected.
-9. **Milestones**: each one shippable, each one with a "done means" line.
+9. **Milestones**: each one shippable, each one with a "done means" line. When one starts and the project tracks work in issues, `method:task-tracking` says how it becomes an epic.
 
 ## The decisions table
 
