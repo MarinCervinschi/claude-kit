@@ -30,11 +30,11 @@ far. Then sort every open point into one of four kinds.
 |---|---|---|
 | Settled | the context already answers it | use the answer; mention it only if the user may not know it |
 | Fact | something the environment can answer | look it up (section 3) |
-| Default | a choice with an obvious answer that is cheap to change later | state it as an assumption, don't ask |
+| Default | a choice with an obvious answer that is cheap to change later | don't ask; list it with the assumptions at the close |
 | Decision | the user's call: it is costly to reverse, or it trades one thing for another | ask it |
 
-The number of decisions sets the size of the session. Say it in one line before the first round, for example
-"I see 3 open decisions, independent of each other: one round."
+The number of decisions sets the size of the session. Say it in one line before the first question, for example
+"I see 3 open decisions, independent of each other."
 
 | Decisions | Session |
 |---|---|
@@ -45,27 +45,45 @@ The number of decisions sets the size of the session. Say it in one line before 
 
 A small task can need no interview at all. Never turn a default into a question to look thorough.
 
-## 2. Ask in rounds
+## 2. Ask
 
 Model the subject as a tree: each decision has the decisions that hang off it. The frontier is every decision
-whose prerequisites are settled. A round asks the whole frontier, then waits for the answers. A question that
-depends on an answer still open in the same round waits for the next round.
+whose prerequisites are settled. A round asks the frontier and waits for the answers. A question that depends on
+an answer still open waits for a later round. After each round, recompute the frontier: settled decisions unblock
+new questions, and an answer can make other questions moot.
 
-Number the questions so the user can answer a round by number ("1 yes, 2 the second option, 3 no because ..."):
+Speak the user's language: the language of their own messages, or the one the project uses with them. A brief
+written by another session or skill does not set it.
+
+There are two ways to ask a round. The user's instruction or their personal settings choose; without either, ask
+the whole round in one message.
+
+**The whole round in one message.** Number the questions so the user can answer by number ("1 yes, 2 the second
+option, 3 no because ..."):
 
 ```markdown
 **Q1. <title>**: <the question, the options and what each one costs>
 → <the option you recommend, and why, in one line>
 ```
 
+**One question at a time.** Ask the round's questions one per message and wait after each. A single question has
+room for its context: what is at stake, the options and what each one costs, the recommendation and why. Close it
+with the question itself, worded for a yes or a no.
+
+Either way:
+
 - Word each question so that "yes" accepts the recommendation. If the recommendation argues against the
   question as worded, reword the question.
-- After the questions, list the assumptions the user can correct: "Assuming, say if not: ...".
+- A message that asks holds the questions and the context they need, nothing else. The assumptions wait for the
+  close (section 5).
+- Use the harness's interactive question tool (`AskUserQuestion` in Claude Code), when there is one, for short
+  closed questions that a one-word answer settles. Its options leave little room for context, so a choice that
+  needs explaining is asked in the message text.
 - Push on vague answers. "Fast" gets "how fast, measured how". Ask again until the answer can be checked.
 - When an answer closes a door (no accounts, no offline, one language), name the door in one sentence.
-- After each round, recompute the frontier. Settled decisions unblock new questions, and an answer can make
-  other questions moot.
-- If the user prefers one question at a time, ask one at a time.
+- When a decision is about something that runs without the user (a routine, a scheduled job, a hook), the
+  question also says how its result reaches them: where the report lands, what notifies them, what happens when
+  it fails.
 - Write no code during the interview. A sketch of a type or an endpoint is fine when it helps a decision.
 
 ## 3. Facts are yours, decisions are the user's
@@ -94,7 +112,7 @@ The session ends when the frontier is empty or the user says to stop. Then show,
 
 1. **Decisions**, one line each with its reason. With more than three, a table with number, decision, why and
    date.
-2. **Assumptions** applied without asking.
+2. **Assumptions**: the defaults applied without asking, for the user to correct.
 3. **Open questions**, each with what would settle it.
 4. **Where to write the decisions down.** Propose the place; write only after the user agrees.
    - The issue where the work lives, as a dated comment ("Decided on 2026-10-30: ...").
