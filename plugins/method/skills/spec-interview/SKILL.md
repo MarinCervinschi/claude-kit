@@ -3,32 +3,23 @@ name: spec-interview
 description: >
   Interviews the user until a project or a large feature has no open decision left, then writes `SPEC.md`: a
   numbered decisions table with a Why column, the architecture, milestones and the open questions. Use it when
-  starting a new project or a feature big enough to need a plan, and when the user says "grill me", "interview
-  me", "spec this", "help me decide" or "what do we need to decide first".
+  starting a new project or a feature big enough to need a plan, and when the user says "spec this", "write the
+  spec" or "what do we need to decide before we start".
 ---
 
 # Spec interview
 
-A project starts with decisions, not code. This skill asks the questions one at a time, pushes on every vague
-answer, and writes each decision down with the reason the user gave. The result is `SPEC.md`, the first file of
-the repo, which the `CLAUDE.md` router and every later session read.
-
-The idea of an interview that keeps asking until the plan has no gaps comes from Matt Pocock's `grill-me` skill
-([mattpocock/skills](https://github.com/mattpocock/skills)). This is a separate text, with its own output: the
-decisions table.
+A project starts with decisions, before any code. This skill runs the interview, pushes on every vague answer,
+and writes each decision down with the reason the user gave. The result is `SPEC.md`, the first file of the repo,
+which the `CLAUDE.md` router and every later session read.
 
 ## How to ask
 
-- **One question at a time**, or a small group when the answers depend on each other. Wait for the answer.
-- **Offer a recommendation** with each question: the option you would pick, one or two alternatives, and what
-  each one costs. The user decides; you never decide for them.
-- **Push on vague answers.** "It should be fast" gets "how fast, measured how, on what". "Users" gets "who,
-  how many, signed in or not". Ask again until the answer can be tested.
-- **Look before you ask.** If the repo, an existing project or the docs already answer a question, read them and
-  confirm instead of asking.
-- **Name the consequence.** When an answer closes a door (no accounts, no offline, one language), say which door,
-  in one sentence, and move on.
-- **Do not write code** during the interview. A sketch of a type or an endpoint is fine when it helps a decision.
+Run the interview as `method:grill-me` describes: size the subject first, ask in rounds over the frontier with a
+recommendation for each question, look facts up instead of asking for them. A new project usually has many
+decisions, so expect several rounds, and push on the vague nouns a project starts with: "users" gets "who, how
+many, signed in or not". The list below is the first level of the design tree: it orders the rounds, and any item
+the context already settles is skipped.
 
 ## What to cover, in this order
 

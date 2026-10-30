@@ -10,6 +10,7 @@ description: Plan and track work as projects, epics, issues and sub-issues on Li
 ## Before creating anything
 
 - A tracker is shared: other people see what you create. Create or edit issues, projects and status updates only when the user asked for it, and show the text first when in doubt.
+- Size the tracking to the work. A change finished in one session needs no issue, unless the project wants every change tracked. One piece of work for later is one issue. An epic is for several pieces or several sessions.
 - Search for an existing issue on the same subject, and link to it instead of duplicating it.
 - Find the parent (project, epic or umbrella issue) the new work belongs to.
 

@@ -8,7 +8,7 @@ stack it uses, and every repo then reads the same version of each skill instead 
 
 | Plugin | Level | Skills |
 |---|---|---|
-| `method` | | `spec-interview`, `task-tracking`, `plain-writing`, `code-comments`, `design-principles`, `feature-review`, `safe-changes`, `pre-pr-checklist` |
+| `method` | | `grill-me`, `spec-interview`, `task-tracking`, `plain-writing`, `code-comments`, `design-principles`, `feature-review`, `safe-changes`, `pre-pr-checklist` |
 | `stack-web-ts` (v3) | full | `overview`, `scaffold`, `drizzle-schema`, `server-functions`, `data-tables` |
 | `stack-rust-py-lab` | base | `overview` |
 | `stack-dotnet-next` | base | `overview` |
@@ -53,8 +53,10 @@ claude --plugin-dir ./plugins/method
 
 ## Credits
 
-- `spec-interview` takes the idea of a relentless planning interview from Matt Pocock's `grill-me` skill
-  ([mattpocock/skills](https://github.com/mattpocock/skills)). The text and the decisions-table output are mine.
+- `grill-me` adapts Matt Pocock's `grill-me` and `grilling` skills
+  ([mattpocock/skills](https://github.com/mattpocock/skills), MIT): the design tree, the rounds over the frontier
+  and the split between facts and decisions. The sizing step, the assumptions list and where decisions are
+  written are mine. `spec-interview` runs its interview the same way and adds the `SPEC.md` output.
 - `feature-review` works best with three third-party plugins, used when installed: `taste-skill`,
   `ui-ux-pro-max` and `interfaces`.
 

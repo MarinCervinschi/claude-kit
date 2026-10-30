@@ -11,9 +11,9 @@
     {
       "name": "method",
       "source": "./plugins/method",
-      "description": "How a project is decided, written and reviewed: a spec interview, plain writing, code comments, design principles, a feature review, safe changes and a pre-PR checklist. Fits any repo.",
+      "description": "How a project is decided, tracked, written and reviewed: an interview for any plan, a spec interview, task tracking, plain writing, code comments, design principles, a feature review, safe changes and a pre-PR checklist. Fits any repo.",
       "license": "MIT",
-      "keywords": ["method", "spec", "writing", "review", "workflow"]
+      "keywords": ["method", "interview", "spec", "tracking", "writing", "review", "workflow"]
     },
     {
       "name": "stack-web-ts",
