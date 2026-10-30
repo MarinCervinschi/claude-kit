@@ -66,15 +66,28 @@ scripts/check-public.sh
 
 It scans every file a commit would carry for secrets, tokens, private keys, IP addresses, tailnet names, machine
 paths, email addresses and em dashes. It also checks a private list of names (my hosts and domains, and products,
-clients and people covered by an NDA), which lives in the gitignored `scripts/denylist.local`, because a
-committed list would publish the names it protects. Without that file the scan stops with exit code 2;
-`scripts/denylist.example` shows the format.
+clients and people covered by an NDA). That list cannot live in this repo, because a committed list would publish
+the names it protects. The scan reads it from `$CLAUDE_KIT_DENYLIST`, which each of my machines points at a copy
+kept in a private repo, or else from the gitignored `scripts/denylist.local`. Without a list the scan stops with
+exit code 2; `scripts/denylist.example` shows the format.
 
 To run it on every push:
 
 ```bash
 ln -s ../../scripts/check-public.sh .git/hooks/pre-push
 ```
+
+### In my other public repos
+
+The same scan guards my public app repos. Their history already holds findings that the whole-tree scan would
+report on every push, so there it runs with `--pushed`, which scans only the lines the pushed commits add.
+
+- A copy of the script at `scripts/check-public.sh`, identical to this one.
+- `.githooks/pre-push` with `exec scripts/check-public.sh --pushed`, enabled once per clone with
+  `git config core.hooksPath .githooks`.
+- An optional `.check-public` file at the top of the repo, one directive per line: `ignore <glob>` for
+  lockfiles and seed data, `allow-name <regex>` for a deny-list name the repo publishes on purpose (its own
+  domain), and `warn <label>` to report a check without failing the push (`warn em dash`).
 
 ## Validate
 
