@@ -72,6 +72,8 @@ scripts/migrate.mjs       applies migrations, plain JS
 compose.yaml              local Postgres
 Dockerfile, docker-entrypoint.sh
 CLAUDE.md, SPEC.md, README.md
+.gitignore                with CLAUDE.local.md, which a *.local pattern does not match
+.worktreeinclude          CLAUDE.local.md, so Claude Code copies it into the worktrees it creates
 ```
 
 The `server-functions` skill explains the `lib/<domain>` layers; the `drizzle-schema` skill explains `db/`.
@@ -226,15 +228,21 @@ service on another port, migrated from zero). A write flow is tested inside a tr
 
 ## 9. CLAUDE.md
 
-A router, not an essay:
+A router, not an essay, written for anyone who clones the repo:
 
 - one line on what the app is, and a dated status line;
 - the stack: `web-ts v3` and what the project adds;
-- a commands table (dev, local db, generate and migrate, test, typecheck, build, infra);
+- a commands table (dev, local db, generate and migrate, test, typecheck, build), each one working without the
+  owner's secrets or saying what it needs;
 - the architecture, one line per folder or important file;
 - the non-negotiable rules ("never `drizzle-kit push`", "one instance", how migrations are applied);
 - skill routing: which skill for which kind of change (the table in `stack-web-ts:overview`, plus the project's
-  own skills).
+  own skills), from plugins a contributor can install.
+
+What only the owner needs stays out of it: where the app runs, the deploy, server names and addresses, the secret
+manager's layout, the commands that reach staging and production, and private plugins. That goes in notes kept
+outside the repo (with the deploy, in a private repo), imported by a `CLAUDE.local.md` that git ignores; a private
+plugin is enabled with `--scope local`, never in the committed `.claude/settings.json`.
 
 ## 10. Check it
 

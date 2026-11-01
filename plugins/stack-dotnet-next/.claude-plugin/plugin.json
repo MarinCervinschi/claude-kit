@@ -1,6 +1,6 @@
 {
   "name": "stack-dotnet-next",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The dotnet-next base stack: an ASP.NET Core API with OpenAPI, a Next.js front on a generated client, workers for long-running work.",
   "author": {
     "name": "Marin Cervinschi"

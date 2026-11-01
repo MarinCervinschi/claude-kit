@@ -33,6 +33,10 @@ human's job unless that skill ran.
 
 - [ ] **Secrets**: tokens, keys, passwords, connection strings, private IPs and hostnames, internal IDs. Not in
       code, tests, fixtures, docs or the commit message.
+- [ ] **A public repo carries the app, not the owner's instance**: no deploy configuration for it, no server
+      names, private addresses, secret-manager paths or account ids, and no private plugin in the committed
+      `.claude/settings.json`. Those belong in a private repo and in a gitignored `CLAUDE.local.md`. When the repo
+      has a public scan (such as `scripts/check-public.sh`), run it on the whole tree.
 - [ ] **Leftovers**: debug prints (`console.log`, `dbg!`, `print`), focused or skipped tests (`.only`, `.skip`),
       commented-out code, TODOs without an issue.
 - [ ] **Comments** pass `code-comments`; **prose** (docs, messages, UI strings) passes `plain-writing`.

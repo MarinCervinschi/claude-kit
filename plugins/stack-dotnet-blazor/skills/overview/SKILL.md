@@ -92,5 +92,5 @@ constraints (sticky sessions, one region).
 
 ## Growing into a full stack
 
-This is a base stack: one overview skill. When one of Marin's own projects uses it, the repeated parts become a
+This is a base stack: one overview skill. When a project uses it, the repeated parts become a
 scaffold skill and pattern skills.

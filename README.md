@@ -51,6 +51,17 @@ To try a plugin from a local checkout without installing it:
 claude --plugin-dir ./plugins/method
 ```
 
+## What belongs here
+
+This marketplace is public on purpose: my public repos enable it in their committed settings, so whoever
+contributes gets the same skills their `CLAUDE.md` routes to. A skill belongs here when it helps someone working in
+one of those repos, or adopting the method or a stack, without my servers or accounts.
+
+What names my servers, accounts or secret-manager layout, or only makes sense on my machines (the deploy runbooks
+first), lives in a private marketplace of mine. A repo enables a private plugin with `--scope local`, never in its
+committed settings, because a contributor could not install it. My personal preferences (language, how I want to
+be asked questions) live in my user-level `CLAUDE.md`, not in a skill.
+
 ## Credits
 
 - `grill-me` adapts Matt Pocock's `grill-me` and `grilling` skills
@@ -81,15 +92,20 @@ ln -s ../../scripts/check-public.sh .git/hooks/pre-push
 
 ### In my other public repos
 
-The same scan guards my public app repos. Their history already holds findings that the whole-tree scan would
-report on every push, so there it runs with `--pushed`, which scans only the lines the pushed commits add.
+The same scan guards my public app repos, on every file a push carries.
 
 - A copy of the script at `scripts/check-public.sh`, identical to this one.
-- `.githooks/pre-push` with `exec scripts/check-public.sh --pushed`, enabled once per clone with
+- `.githooks/pre-push` with `exec scripts/check-public.sh`, enabled once per clone with
   `git config core.hooksPath .githooks`.
-- An optional `.check-public` file at the top of the repo, one directive per line: `ignore <glob>` for
-  lockfiles and seed data, `allow-name <regex>` for a deny-list name the repo publishes on purpose (its own
-  domain), and `warn <label>` to report a check without failing the push (`warn em dash`).
+- An optional `.check-public` file at the top of the repo, one directive per line:
+  - `ignore <glob>` for lockfiles and generated data;
+  - `allow-name <regex>` for a deny-list name the repo publishes on purpose (its own domain);
+  - `allow <regex> [in <glob>]` for a match the repo publishes on purpose, of any check, optionally in one path
+    (its contact address, a word in one file that collides with a deny-list name);
+  - `warn <label>` to report a check without failing the push (`warn em dash`).
+
+A repo whose tree still holds findings starts with `--pushed`, which scans only the lines the pushed commits add.
+Once the whole-tree scan is clean, the hook drops `--pushed`, as it has in my public repos since 2026-11-01.
 
 ## Validate
 
