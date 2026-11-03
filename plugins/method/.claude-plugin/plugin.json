@@ -1,7 +1,7 @@
 {
   "name": "method",
-  "version": "1.4.0",
-  "description": "How a project is decided, tracked, written and reviewed: an interview for any plan, spec interview, task tracking, plain writing, code comments, design principles, feature review, safe changes, pre-PR checklist.",
+  "version": "1.5.0",
+  "description": "How a project is decided, tracked, written, documented and reviewed: an interview for any plan, spec interview, task tracking, plain writing, code comments, design principles, docs, feature review, safe changes, pre-PR checklist.",
   "author": {
     "name": "Marin Cervinschi"
   },
@@ -15,6 +15,7 @@
     "tracking",
     "writing",
     "review",
-    "workflow"
+    "workflow",
+    "docs"
   ]
 }
