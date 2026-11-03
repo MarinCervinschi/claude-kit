@@ -42,8 +42,10 @@ project's choice and does not change the files.
 - From another repo, add `--dir <path to the repo>`.
 - The output is one line per item, the page or `page#anchor` first. `--json` gives the same data to a script.
 
-The usual file tools stay available on `docs/`: editing a page needs a read first, and `docs` does not write.
-Use them to change pages, and `docs` to find and read.
+**Read the docs only through `docs`.** Do not open or Grep files in `docs/` to look something up: a Grep over
+the repo returns lines out of their section, and a whole page costs more than the section you need. The file
+tools stay allowed on `docs/` because editing a page needs a read first and `docs` does not write: Read a page
+only to edit it, and give Grep a path outside `docs/` when you search the code.
 
 ## Writing a page
 
@@ -89,6 +91,7 @@ One per folder sets the folder's title and the order of its pages:
 One line in the skill routing sends questions to the docs:
 
 ```markdown
-- A question about how the project works → `method:docs`: `docs outline`, then the section you need. A fact
-  learned while working goes into its page, with its date.
+- A question about how the project works → the docs, read with the `docs` CLI (`method:docs`): `docs search` or
+  `docs outline`, then `docs page <page>#<anchor>`. Do not Read or Grep files in `docs/` to look something up;
+  Read a page only to edit it. A fact learned while working goes into its page, with its date.
 ```
